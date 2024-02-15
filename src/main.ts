@@ -32,5 +32,20 @@ function closePopup(){
         currentPopup = undefined;
     }
 }
+// Funktion zum Senden einer Chatnachricht
+function sendChatMessage(message) {
+    // Überprüfe, ob die WorkAdventure-Chatfunktionen verfügbar sind
+    if (typeof workadventure !== 'undefined' && typeof workadventure.sendChatMessage === 'function') {
+        // Rufe die Funktion zum Senden einer Chatnachricht auf
+        workadventure.sendChatMessage(message);
+    } else {
+        console.error('WorkAdventure-Chatfunktionen sind nicht verfügbar.');
+    }
+}
 
+// Nachricht, die gesendet werden soll
+const message = "Hallo alle zusammen! Willkommen bei WorkAdventure!";
+
+// Senden der Chatnachricht
+sendChatMessage(message);
 export {};
